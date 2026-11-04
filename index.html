@@ -1,12 +1,566 @@
-{"type": "tool_use", "id": "toolu_01U22vZJQ24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a newborn baby wrapped in a white blanket, sleeping peacefully with a small teddy bear nearby, cream and blush pink background with golden sparkles, dreamy nursery aesthetic, gentle lighting, delicate baby's first month theme"}}
-{"type": "tool_use", "id": "toolu_0152W5K8n24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 2-month-old baby smiling sweetly while being held by mother's hands, cream and blush pink background with tiny golden stars, dreamy nursery aesthetic, gentle warm lighting, baby's first smile theme"}}
-{"type": "tool_use", "id": "toolu_013xV4n3R24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 3-month-old baby laughing joyfully with a colorful rattle toy, cream and blush pink background with floating musical notes, dreamy nursery aesthetic, gentle warm lighting, baby's first laugh theme"}}
-{"type": "tool_use", "id": "toolu_017pR6t5S24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 4-month-old baby sitting with support, reaching for a colorful toy, cream and blush pink background with soft clouds, dreamy nursery aesthetic, gentle warm lighting, baby sitting milestone theme"}}
-{"type": "tool_use", "id": "toolu_019qT8u7V24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 5-month-old baby in a small baby pool with rubber ducks, cream and blush pink background with water splashes, dreamy nursery aesthetic, gentle warm lighting, baby's first bath theme"}}
-{"type": "tool_use", "id": "toolu_012wX3s4P24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 6-month-old baby tasting baby food from a small spoon, cream and blush pink background with fruits and vegetables, dreamy nursery aesthetic, gentle warm lighting, baby's first food theme"}}
-{"type": "tool_use", "id": "toolu_014yZ5v6Q24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 7-month-old baby crawling happily on a soft carpet with colorful toys around, cream and blush pink background with little footprints, dreamy nursery aesthetic, gentle warm lighting, baby crawling milestone theme"}}
-{"type": "tool_use", "id": "toolu_016aB7w8R24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 8-month-old baby clapping hands with a big smile, cream and blush pink background with confetti, dreamy nursery aesthetic, gentle warm lighting, baby clapping milestone theme"}}
-{"type": "tool_use", "id": "toolu_018cD9x0T24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 9-month-old baby climbing on soft cushions with curious expression, cream and blush pink background with little hearts, dreamy nursery aesthetic, gentle warm lighting, baby exploring milestone theme"}}
-{"type": "tool_use", "id": "toolu_010eF1y2U24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 10-month-old baby standing holding onto furniture, cream and blush pink background with little stars, dreamy nursery aesthetic, gentle warm lighting, baby standing milestone theme"}}
-{"type": "tool_use", "id": "toolu_011gH3z4V24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 11-month-old baby taking first steps with parents' hands, cream and blush pink background with snowflakes, dreamy nursery aesthetic, gentle warm lighting, baby's first steps theme"}}
-{"type": "tool_use", "id": "toolu_013iJ5a6W24Q8YhZ7U1WZfJ9", "name": "image_gen", "input": {"prompt": "Soft pastel watercolor illustration of a 1-year-old baby celebrating first birthday with a small cake with number 1 candle, cream and blush pink background with balloons and gifts, dreamy nursery aesthetic, gentle warm lighting, baby's first birthday theme"}}
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍼 Փոքրիկի Առաջինները — Առաջին Տարին</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --pink: #ffb6c1;
+    --blue: #a8d8ea;
+    --cream: #fff8e7;
+    --gold: #f4c430;
+    --purple: #c9b1ff;
+    --dark: #4a4a6a;
+  }
+  
+  body {
+    font-family: 'Georgia', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #fff8e7 0%, #ffe4ec 50%, #e4f1fe 100%);
+    color: var(--dark);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  
+  /* Floating clouds background */
+  .clouds {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .cloud {
+    position: absolute;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    filter: blur(20px);
+    animation: float 30s infinite linear;
+  }
+  .cloud:nth-child(1) { width: 200px; height: 200px; top: 10%; animation-duration: 40s; }
+  .cloud:nth-child(2) { width: 150px; height: 150px; top: 40%; animation-duration: 55s; animation-delay: -10s; }
+  .cloud:nth-child(3) { width: 250px; height: 250px; top: 70%; animation-duration: 50s; animation-delay: -20s; }
+  
+  @keyframes float {
+    0% { transform: translateX(-300px); }
+    100% { transform: translateX(calc(100vw + 300px)); }
+  }
+  
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--pink), var(--gold), var(--blue), var(--purple));
+    width: 0%;
+    z-index: 1000;
+    transition: width 0.1s;
+    box-shadow: 0 0 10px rgba(244,196,48,0.5);
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 80px 20px 60px;
+    position: relative;
+    z-index: 1;
+  }
+  header h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    background: linear-gradient(135deg, #ff6b9d, #c06eff, #6bb5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    animation: titleGlow 3s ease-in-out infinite;
+    letter-spacing: 2px;
+  }
+  @keyframes titleGlow {
+    0%, 100% { filter: drop-shadow(0 0 10px rgba(255,107,157,0.3)); }
+    50% { filter: drop-shadow(0 0 25px rgba(192,110,255,0.6)); }
+  }
+  header p {
+    font-size: 1.3rem;
+    color: var(--dark);
+    opacity: 0.8;
+    font-style: italic;
+  }
+  .baby-emoji {
+    font-size: 4rem;
+    display: inline-block;
+    animation: bounce 2s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+  
+  /* Music toggle */
+  .music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    z-index: 999;
+    transition: transform 0.3s;
+  }
+  .music-btn:hover { transform: scale(1.1) rotate(15deg); }
+  .music-btn.playing { animation: spin 3s linear infinite; }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Timeline container */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+    z-index: 1;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(to bottom, var(--pink), var(--gold), var(--blue), var(--purple));
+    border-radius: 3px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(244,196,48,0.3);
+  }
+  
+  /* Month card */
+  .month {
+    position: relative;
+    width: 50%;
+    padding: 30px 50px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .month.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .month:nth-child(odd) {
+    left: 0;
+    text-align: right;
+  }
+  .month:nth-child(even) {
+    left: 50%;
+    text-align: left;
+  }
+  
+  /* Timeline dot */
+  .month::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #ff9a56);
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(244,196,48,0.6);
+    z-index: 2;
+    animation: pulse 2s infinite;
+  }
+  .month:nth-child(odd)::before { right: -15px; }
+  .month:nth-child(even)::before { left: -15px; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(244,196,48,0.6); }
+    50% { box-shadow: 0 0 35px rgba(244,196,48,1); }
+  }
+  
+  /* Card flip */
+  .card-container {
+    perspective: 1500px;
+    width: 100%;
+    height: 420px;
+  }
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .card.flipped { transform: rotateY(180deg); }
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  }
+  
+  .card-front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-front img {
+    width: 100%;
+    height: 65%;
+    object-fit: cover;
+  }
+  .card-front .info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .month-label {
+    font-size: 1.1rem;
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .event-title {
+    font-size: 1.5rem;
+    color: var(--dark);
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .event-date {
+    font-size: 0.95rem;
+    color: #888;
+    font-style: italic;
+  }
+  .flip-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 0.8rem;
+    color: var(--pink);
+    opacity: 0.7;
+  }
+  
+  .card-back {
+    background: linear-gradient(135deg, var(--cream), #ffe4ec);
+    transform: rotateY(180deg);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .card-back .big-emoji {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+  }
+  .card-back h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+  }
+  .card-back p {
+    font-size: 1rem;
+    color: var(--dark);
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+  .card-back .date-stamp {
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--pink);
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  footer h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ff6b9d, #6bb5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+  }
+  footer p {
+    font-size: 1.2rem;
+    color: var(--dark);
+    font-style: italic;
+    opacity: 0.8;
+  }
+  .heart {
+    display: inline-block;
+    color: #ff6b9d;
+    animation: heartbeat 1.5s infinite;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .timeline::before { left: 20px; }
+    .month {
+      width: 100%;
+      left: 0 !important;
+      text-align: left !important;
+      padding: 20px 20px 20px 60px;
+    }
+    .month::before {
+      left: 5px !important;
+      right: auto !important;
+    }
+    .card-container { height: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="clouds">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+</div>
+
+<button class="music-btn" id="musicBtn" title="Երաժշտություն">🎵</button>
+
+<header>
+  <div class="baby-emoji">👶</div>
+  <h1>Փոքրիկի Առաջինները</h1>
+  <p>Առաջին տարվա կախարդական 12 ամիսը ✨</p>
+</header>
+
+<div class="timeline" id="timeline">
+  <!-- 12 months will be generated by JS -->
+</div>
+
+<footer>
+  <h2>Սիրով լի առաջին տարի <span class="heart">❤</span></h2>
+  <p>Յուրաքանչյուր օր՝ նոր հրաշք, յուրաքանչյուր ժպիտ՝ անմոռանալի հիշողություն</p>
+</footer>
+
+<script>
+  // Month data: image, event, date, emoji, description
+  const monthsData = [
+    {
+      month: "1 ամսական",
+      event: "Առաջին ժպիտը",
+      date: "2026 թ․ Հունվարի 15",
+      img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600",
+      emoji: "😊",
+      desc: "Առաջին անգամ փոքրիկը ժպտաց իրական ժպիտով՝ ճանաչելով մայրիկի դեմքը։ Այդ պահին ամբողջ աշխարհը լուսավորվեց։"
+    },
+    {
+      month: "2 ամսական",
+      event: "Գլուխը պահեց",
+      date: "2026 թ․ Փետրվարի 12",
+      img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600",
+      emoji: "💪",
+      desc: "Փոքրիկը կարողացավ մի քանի վայրկյան պահել գլուխը՝ պառկած փորի վրա։ Փոքրիկ հաղթանակ մեծ ապագայի համար։"
+    },
+    {
+      month: "3 ամսական",
+      event: "Առաջին ծիծաղը",
+      date: "2026 թ․ Մարտի 20",
+      img: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=600",
+      emoji: "😄",
+      desc: "Հնչեց աշխարհի ամենաքաղցր ձայնը՝ փոքրիկի առաջին ծիծաղը, երբ հայրիկը ծաղրածուի պես դեմք շինեց։"
+    },
+    {
+      month: "4 ամսական",
+      event: "Շրվեց փորի վրա",
+      date: "2026 թ․ Ապրիլի 18",
+      img: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600",
+      emoji: "🔄",
+      desc: "Առաջին անգամ ինքնուրույն շրվեց մեջքից փորի վրա։ Նոր աշխարհ բացվեց փոքրիկի աչքերի առաջ։"
+    },
+    {
+      month: "5 ամսական",
+      event: "Բռնեց խաղալիքը",
+      date: "2026 թ․ Մայիսի 25",
+      img: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&sat=-30",
+      emoji: "🧸",
+      desc: "Փոքրիկ ձեռքերը առաջին անգամ նպատակաուղղված բռնեցին խաղալիքը և չթողեցին։"
+    },
+    {
+      month: "6 ամսական",
+      event: "Առաջին պատառը",
+      date: "2026 թ․ Հունիսի 14",
+      img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&sat=-20",
+      emoji: "🥄",
+      desc: "Առաջին համը՝ քաղցր գազարի խյուսը։ Դեմքին՝ հազար ու մի արտահայտություն, իսկ այտերին՝ սպիտակ մորուք։"
+    },
+    {
+      month: "7 ամսական",
+      event: "Նստեց ինքնուրույն",
+      date: "2026 թ․ Հուլիսի 22",
+      img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&sat=-20",
+      emoji: "🪑",
+      desc: "Փոքրիկը նստեց առանց օգնության՝ ուղիղ մեջքով, շրջապատը դիտելով թագավորի պես։"
+    },
+    {
+      month: "8 ամսական",
+      event: "Առաջին ատամը",
+      date: "2026 թ․ Օգոստոսի 10",
+      img: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=600&sat=-20",
+      emoji: "🦷",
+      desc: "Երկարատև անքուն գիշերներից հետո՝ առաջին փոքրիկ ատամիկը ցցվեց։ Ժպիտը դարձավ ավելի փայլուն։"
+    },
+    {
+      month: "9 ամսական",
+      event: "Սկսեց սողալ",
+      date: "2026 թ․ Սեպտեմբերի 5",
+      img: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=600&sat=-10",
+      emoji: "🐛",
+      desc: "Փոքրիկ հետախույզը սկսեց ճանապարհորդել տան սենյակներով՝ սողալով։ Ոչ մի անկյուն այլևս անմատչելի չէ։"
+    },
+    {
+      month: "10 ամսական",
+      event: "Ասաց «Մամա»",
+      date: "2026 թ․ Հոկտեմբերի 18",
+      img: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&sat=-10",
+      emoji: "🗣️",
+      desc: "Առաջին բառը՝ «Մամա»։ Մայրիկի սիրտը հալվեց, իսկ փոքրիկի ժպիտը դարձավ ավելի լայն։"
+    },
+    {
+      month: "11 ամսական",
+      event: "Կանգնեց պահարանից",
+      date: "2026 թ․ Նոյեմբերի 8",
+      img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&sat=-10",
+      emoji: "🧍",
+      desc: "Փոքրիկ ոտքերը առաջին անգամ բարձրացան հատակից՝ պահարանից բռնած։ Աշխարհը դարձավ ավելի մեծ։"
+    },
+    {
+      month: "12 ամսական",
+      event: "Առաջին քայլը",
+      date: "2026 թ․ Դեկտեմբերի 4",
+      img: "https://images.unsplash.com/photo-1544126592-807ade215a0b?w=600&sat=-10",
+      emoji: "👣",
+      desc: "Կյանքի ամենամեծ օրը՝ առաջին քայլը առանց օգնության։ Փոքրիկ քայլ, բայց մեծ ճանապարհի սկիզբ։"
+    }
+  ];
+  
+  // Build timeline
+  const timeline = document.getElementById('timeline');
+  monthsData.forEach((m, i) => {
+    const monthEl = document.createElement('div');
+    monthEl.className = 'month';
+    monthEl.innerHTML = `
+      <div class="card-container">
+        <div class="card">
+          <div class="card-face card-front">
+            <img src="${m.img}" alt="${m.event}" loading="lazy">
+            <div class="info">
+              <div class="month-label">${m.month}</div>
+              <div class="event-title">${m.event}</div>
+              <div class="event-date">📅 ${m.date}</div>
+            </div>
+            <div class="flip-hint">↻ Սեղմիր</div>
+          </div>
+          <div class="card-face card-back">
+            <div class="big-emoji">${m.emoji}</div>
+            <h3>${m.event}</h3>
+            <p>${m.desc}</p>
+            <div class="date-stamp">📅 ${m.date}</div>
+          </div>
+        </div>
+      </div>
+    `;
+    timeline.appendChild(monthEl);
+  });
+  
+  // Flip cards on click
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+  
+  // Scroll reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  document.querySelectorAll('.month').forEach(m => observer.observe(m));
+  
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('progressBar').style.width = scrolled + '%';
+  });
+  
+  // Music toggle (simple beep melody using Web Audio API)
+  const musicBtn = document.getElementById('musicBtn');
+  let audioCtx, isPlaying = false, melodyInterval;
+  
+  musicBtn.addEventListener('click', () => {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    
+    if (!isPlaying) {
+      isPlaying = true;
+      musicBtn.classList.add('playing');
+      musicBtn.textContent = '🎶';
+      playMelody();
+    } else {
+      isPlaying = false;
+      musicBtn.classList.remove('playing');
+      musicBtn.textContent = '🎵';
+      clearInterval(melodyInterval);
+    }
+  });
+  
+  function playMelody() {
+    const notes = [523.25, 587.33, 659.25, 698.46, 783.99, 659.25, 523.25, 587.33]; // Twinkle twinkle
+    let i = 0;
+    const playNote = () => {
+      if (!isPlaying) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.frequency.value = notes[i % notes.length];
+      osc.type = 'sine';
+      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.4);
+      i++;
+    };
+    playNote();
+    melodyInterval = setInterval(playNote, 500);
+  }
+</script>
+
+</body>
+</html>
